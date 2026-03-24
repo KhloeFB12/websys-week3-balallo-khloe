@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Portfolio | Balallo, Khloe</title>
+    <style>
+        /* Creative Styling - Not Basic */
+        :root {
+            --primary-blue: #2c3e50;
+            --accent-green: #1abc9c;
+            --light-bg: #f4f7f6;
+        }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; background-color: var(--light-bg); color: #333; }
+        
+        /* Header & Nav */
+        header { background: var(--primary-blue); color: white; padding: 40px 20px; text-align: center; }
+        nav { background: #34495e; position: sticky; top: 0; display: flex; justify-content: center; padding: 10px; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--accent-green); }
+
+        /* Section Containers */
+        section { max-width: 800px; margin: 30px auto; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { border-left: 5px solid var(--accent-green); padding-left: 15px; color: var(--primary-blue); }
+
+        /* Profile Image logic */
+        .profile-container { text-align: center; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-green); margin-bottom: 15px; }
+
+        /* Lists */
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        a { color: var(--accent-green); text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+
+        footer { text-align: center; padding: 20px; background: var(--primary-blue); color: white; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <h1>Khloe F. Balallo</h1>
+        <p>Course: BSIT-MWA - Mobile and Web Applications</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="profile-container">
+            <img src="your-image.jpg" alt="Profile Picture of [Name]" class="profile-img">
+            <p>I am a dedicated student at <strong>National University</strong>. My journey in the College of Computing and Information Technologies is driven by a fascination with how systems communicate and how elegant code can solve complex problems.</p>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2>My Hobbies & Interests</h2>
+        <ul>
+            <li><strong>Reading:</strong> Reading Fiction and Non-fiction books.</li>
+            <li><strong>Playing guitar:</strong> Learning new guitar songs and making covers.</li>
+            <li><strong>Binge Watching:</strong> Watching shows that are classic, supernatural, and romantic.</li>
+            <li><strong>Video Editing:</strong> Editing videos for my freelance business with my brother.</li>
+        </ul>
+    </section>
+
+    <section id="favorites">
+        <h2>Favorite Learning Resources</h2>
+        <p>These platforms help me refine my technical skills:</p>
+        <ol>
+            <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a> - The ultimate authority on HTML and CSS.</li>
+            <li><a href="https://www.postgresql.org" target="_blank">PostgreSQL Official</a> - My go-to for advanced database queries.</li>
+            <li><a href="https://github.com" target="_blank">GitHub</a> - Where I manage my version control and repositories.</li>
+        </ol>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p>If you'd like to collaborate on a project or talk about Web Systems, reach out here:</p>
+        <p>Email: <a href="mailto:balallokf@students.national-u.edu.ph">balallokf@students.national-u.edu.ph</a></p>
+        <p><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Khloe F. Balallo | Built for Web Systems and Technologies Lab</p>
+    </footer>
+
+</body>
+</html>

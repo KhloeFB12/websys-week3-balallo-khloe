@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #3B4F7A, #8EA7B8, #9FB2C1, #AAB4C1);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #1e3a5f;
+}
+@keyframes gradientMove {
+    0% {background-position: 0%;}
+    50% {background-position: 100%;}
+    100% {background-position: 0%;}
+}
+
+/* Envelope Reveal */
+.envelope-reveal {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: 100px auto 50px auto; /* envelope slightly lower on page */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.envelope-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #3B4F7A;
+    transform-origin: top;
+    transform: rotateX(90deg);
+    transition: transform 1s ease;
+    z-index: 2;
+}
+.envelope-reveal.open .envelope-top { transform: rotateX(0deg); }
+.envelope-content {
+    background: rgba(255,255,255,0.9);
+    padding: 60px 30px 30px 30px; /* increased top padding to push content lower */
+    border-radius: 0 0 15px 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease 0.8s, transform 1s ease 0.8s;
+}
+.envelope-reveal.open .envelope-content { opacity: 1; transform: translateY(0); }
+
+/* Headers */
+h2 { border-left: 5px solid #3B4F7A; padding-left: 10px; margin-top: 20px; color: #0f172a; }
+p, ol, ul { margin-top: 10px; line-height: 1.5; }
+a { color: #3B4F7A; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.btn { display: inline-block; margin: 20px auto 0; padding: 10px 20px; background: #3B4F7A; color: white; border-radius: 25px; text-align: center; text-decoration: none; }
+.btn:hover { background: #1e3a5f; }
+
+/* Drawer styles */
+.drawer { margin: 20px 0; border: 2px solid #3B4F7A; border-radius: 10px; overflow: hidden; cursor: pointer; }
+.drawer summary { padding: 10px 15px; background: #8EA7B8; color: white; font-weight: 500; list-style: none; }
+.drawer summary::-webkit-details-marker { display: none; }
+.drawer[open] summary { background: #3B4F7A; }
+.drawer .drawer-content { padding: 15px; background: rgba(255,255,255,0.85); display: block; }
+
+/* Wavy text for third drawer */
+.wavy span { display: inline-block; animation: wave 1s infinite; }
+.wavy span:nth-child(odd) { animation-delay: 0.1s; }
+.wavy span:nth-child(even) { animation-delay: 0.2s; }
+@keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-8px); } }
+
+</style>
+</head>
+<body>
+
+<div class="envelope-reveal" id="envelope">
+    <div class="envelope-top"></div>
+    <div class="envelope-content">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm Khloe, an IT student passionate about creating modern and aesthetic web designs. I enjoy combining creativity and technology to build meaningful digital experiences.</p>
+        </section>
+
+        <section id="goals">
+            <h2>Goals</h2>
+            <p style="text-align: justify;"></p>
+            <p>My goal is to become a full-stack web developer while expanding my freelance work in video editing and content creation. I aim to design websites that are functional, modern, and visually engaging.</p>
+        </section>
+
+        <section id="favorites">
+            <h2>Learning Resources</h2>
+
+            <!-- Drawer 1 -->
+            <details class="drawer">
+                <summary>MDN Web Docs</summary>
+                <div class="drawer-content">
+                    <p>Reference documentation for HTML, CSS, and JS.</p>
+                </div>
+            </details>
+
+            <!-- Drawer 2 -->
+            <details class="drawer">
+                <summary>PostgreSQL</summary>
+                <div class="drawer-content">
+                    <p>Database resources and tutorials.</p>
+                </div>
+            </details>
+
+            <!-- Drawer 3 with wavy clickable text -->
+<details class="drawer">
+    <summary>GitHub</summary>
+    <div class="drawer-content wavy">
+        <a href="https://github.com/KhloeFB12" target="_blank" style="text-decoration:none; color:#3B4F7A;">
+            <span>G</span><span>i</span><span>t</span><span>H</span><span>u</span><span>b</span>
+        </a>
+    </div>
+</details>
+        </section>
+
+<style>
+/* Container adjustments for About page */
+.pendulum {
+    position: relative;
+    width: 220px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: transparent; /* remove pink bg */
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.pendulum_box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.ball {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #3B4F7A;
+    position: relative;
+    transform-origin: 50% -300%; /* pivot above the ball */
+    cursor: pointer;
+}
+
+/* Strings */
+.ball::before {
+    content: '';
+    width: 2px;
+    height: 120px;
+    background-color: #0f172a;
+    left: 50%;
+    top: -120px;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+/* Swing animations */
+@keyframes firstball {
+    0% { transform: rotate(35deg); }
+    50% { transform: rotate(0deg); }
+}
+@keyframes lastball {
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(-35deg); }
+}
+
+/* Active swing classes (triggered on hover/click) */
+.swing-left {
+    animation: firstball 0.9s alternate ease-in infinite;
+}
+.swing-right {
+    animation: lastball 0.9s alternate ease-out infinite;
+}
+</style>
+
+<script>
+// Select first and last balls
+const firstBall = document.querySelector('.pendulum .ball.first');
+const lastBall = document.querySelector('.pendulum .ball.last');
+
+// Trigger swing on hover
+firstBall.addEventListener('mouseenter', () => {
+    firstBall.classList.add('swing-left');
+    lastBall.classList.add('swing-right');
+});
+firstBall.addEventListener('mouseleave', () => {
+    firstBall.classList.remove('swing-left');
+    lastBall.classList.remove('swing-right');
+});
+
+lastBall.addEventListener('mouseenter', () => {
+    lastBall.classList.add('swing-right');
+    firstBall.classList.add('swing-left');
+});
+lastBall.addEventListener('mouseleave', () => {
+    lastBall.classList.remove('swing-right');
+    firstBall.classList.remove('swing-left');
+});
+</script>
+
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+</div>
+
+<script>
+// Auto-open envelope on page load
+window.addEventListener('load', () => {
+    const envelope = document.getElementById('envelope');
+    setTimeout(() => envelope.classList.add('open'), 500);
+});
+</script>
+
+</body>
+</html>
